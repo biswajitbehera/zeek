@@ -1258,7 +1258,7 @@ lambda_body:
 
 			// Gather the ingredients for a BroFunc from the current scope
 			auto ingredients = std::make_unique<function_ingredients>(IntrusivePtr{NewRef{}, current_scope()}, IntrusivePtr{AdoptRef{}, $3});
-			id_list outer_ids = gather_outer_ids(pop_scope().get(), ingredients->body.get());
+			id_list outer_ids = zeek::detail::gather_outer_ids(pop_scope().get(), ingredients->body.get());
 
 			$$ = new zeek::detail::LambdaExpr(std::move(ingredients), std::move(outer_ids));
 			}
