@@ -1255,7 +1255,7 @@ void ListVal::Describe(ODesc* d) const
 		{
 		type->Describe(d);
 		d->SP();
-		d->Add(vals.size());
+		d->Add(static_cast<uint64_t>(vals.size()));
 		d->SP();
 		}
 
