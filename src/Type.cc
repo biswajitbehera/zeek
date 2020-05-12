@@ -188,7 +188,7 @@ void TypeList::Describe(ODesc* d) const
 		d->Add(IsPure());
 		if ( IsPure() )
 			pure_type->Describe(d);
-		d->Add(types.size());
+		d->Add(static_cast<uint64_t>(types.size()));
 		}
 
 	if ( IsPure() )
